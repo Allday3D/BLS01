@@ -1,0 +1,197 @@
+[
+    {
+        "id": "297efa0a.dc0e66",
+        "type": "tab",
+        "label": "BLS device",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "c166f168.f18ef",
+        "type": "mqtt in",
+        "z": "297efa0a.dc0e66",
+        "name": "",
+        "topic": "home/BLS01/Bls1out",
+        "qos": "2",
+        "broker": "e5ed68a2.671648",
+        "x": 160,
+        "y": 60,
+        "wires": [
+            [
+                "e8cd449d.26c0d8"
+            ]
+        ]
+    },
+    {
+        "id": "41d93937.67d2",
+        "type": "ui_switch",
+        "z": "297efa0a.dc0e66",
+        "name": "",
+        "label": "Change state",
+        "tooltip": "",
+        "group": "2f538ac6.f2b34e",
+        "order": 1,
+        "width": "4",
+        "height": "1",
+        "passthru": true,
+        "decouple": "false",
+        "topic": "",
+        "style": "",
+        "onvalue": "0",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "1",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "x": 480,
+        "y": 120,
+        "wires": [
+            [
+                "b0ca3fa6.bb863",
+                "e8cd449d.26c0d8"
+            ]
+        ]
+    },
+    {
+        "id": "aab9d511.744498",
+        "type": "ui_text",
+        "z": "297efa0a.dc0e66",
+        "group": "2f538ac6.f2b34e",
+        "order": 2,
+        "width": "2",
+        "height": "1",
+        "name": "on/off",
+        "label": "",
+        "format": "<font color={{(msg.payload?\"yellow\":\"grey\")}}><i class=\"fa fa-lightbulb-o fa-2x\"></i></font><br/><font size=\"-2\"></font>",
+        "layout": "row-center",
+        "x": 570,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "e8cd449d.26c0d8",
+        "type": "change",
+        "z": "297efa0a.dc0e66",
+        "name": "",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "0",
+                "fromt": "str",
+                "to": "true",
+                "tot": "bool"
+            },
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "1",
+                "fromt": "str",
+                "to": "false",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 400,
+        "y": 60,
+        "wires": [
+            [
+                "aab9d511.744498"
+            ]
+        ]
+    },
+    {
+        "id": "b0ca3fa6.bb863",
+        "type": "mqtt out",
+        "z": "297efa0a.dc0e66",
+        "name": "",
+        "topic": "home/BLS01/Bls1in",
+        "qos": "",
+        "retain": "",
+        "broker": "e5ed68a2.671648",
+        "x": 750,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "598e64a3.f73344",
+        "type": "mqtt in",
+        "z": "297efa0a.dc0e66",
+        "name": "",
+        "topic": "home/BLS01/Bls1ip",
+        "qos": "2",
+        "broker": "e5ed68a2.671648",
+        "x": 150,
+        "y": 180,
+        "wires": [
+            [
+                "81dae3d7.30cfc8"
+            ]
+        ]
+    },
+    {
+        "id": "81dae3d7.30cfc8",
+        "type": "ui_text",
+        "z": "297efa0a.dc0e66",
+        "group": "2f538ac6.f2b34e",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Current IP",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 550,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "e5ed68a2.671648",
+        "type": "mqtt-broker",
+        "z": "",
+        "name": "NodeREDMQTT                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     ",
+        "broker": "192.168.2.5",
+        "port": "1883",
+        "clientid": "nodered",
+        "usetls": false,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": false,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "2f538ac6.f2b34e",
+        "type": "ui_group",
+        "z": "",
+        "name": "Button load switch 01",
+        "tab": "36a8e59b.8725fa",
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "36a8e59b.8725fa",
+        "type": "ui_tab",
+        "z": "",
+        "name": "BLS device",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]

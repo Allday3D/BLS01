@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US"><head><!-- Created by AD3D -->
+	<meta charset="utf-8">
+	<title>BLS-01</title>
+	<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
+	<link rel="apple-touch-icon" sizes="144x144" href="/favicon_144x144.png">
+    <link rel="icon" type="image/png" sizes="144x144"  href="/favicon_144x144.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="favicon.ico">
+	<script src="jquery.min.js"></script>
+	<link rel="stylesheet" href="style.css">
+<style>
+
+</style>
+	
+<script>
+$(document).ready(function() {
+            setInterval("changeOutput(pinToToggle)", 2000);
+			
+        });
+
+function changeOutput(pinToToggle) {
+            var someUrl = "/digital_output/toggle";
+            $.ajax({
+			url: someUrl,
+			dataType: "text",
+			success: function(response) {
+			if (response == '0') {
+			$("#myImage").attr("src", "bulb_off.png");
+			} else if (response == '1') {
+			$("#myImage").attr("src", "bulb_on.png");
+			}
+			},
+			timeout: 2000
+            })
+			}
+</script>
+</head>
+<body>
+
+<div class="wrapper">
+	<header class="header"> 
+		<h1><a href="https://github.com/Allday3D" target="_blank"><img src="favicon_144x144.png" width="60%"></a>Bls-01</h1>
+	</header>
+	<aside class="sidebar">
+		<h2>Button load switch</h2>
+		<h3>Switch the state off the lightbulb</h3>
+		<button class="button" id="switchstate" style="width:100%" onclick="changeOutput();">on/off</button>
+	</aside>
+	<article class="content" style="background-color: #282828;">
+		<span class="mousechange"><img id="myImage" style="cursor: hand;" onclick="changeOutput()" src="bulb_off.png" width="80" height="120"></span>
+	</article>
+	<footer class="footer"><h1>Made by <a href="https://www.allday-3d.com" target="_blank">AD3D</a>.</h1></footer>
+</div>
+
+
+
+</body>
+</html>
