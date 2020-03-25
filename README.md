@@ -45,7 +45,7 @@ https://github.com/tzapu/WiFiManager ESP8266 WiFi Connection manager with web ca
 
 Webpage!? Try to get that grid under control.
 
-![Web view](https://github.com/Allday3D/GH03/blob/master/web_page_bls01.jpg)
+![Web view](https://github.com/Allday3D/BLS01/blob/master/web_page_bls01.jpg)
 
 Sketch uses 438100 bytes (87%) of program storage space. Maximum is 499696 bytes.
 Global variables use 32648 bytes (39%) of dynamic memory, leaving 49272 bytes for local variables. Maximum is 81920 bytes.
