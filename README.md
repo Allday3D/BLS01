@@ -4,7 +4,7 @@
 A small device that is able to switch a state (relay or LED) with a button on the device, a button on a webpage or with MQTT.
 It connects to a MQTT server then:
 
-	- on 0 switches off led (home/BLS01/Bls1in
+	- on 0 switches off led (home/BLS01/Bls1in)
 	- on 1 switches on led
 	- on 2 switches the state of the led
 
