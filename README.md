@@ -3,13 +3,14 @@
 ## ESP8266-01 as mini webserver
 A small device that is able to switch a state (relay or LED) with a button on the device, a button on a webpage or with MQTT.
 It connects to a MQTT server then:
+
 	- on 0 switches off led (home/BLS01/Bls1in
 	- on 1 switches on led
 	- on 2 switches the state of the led
 
-	It will reconnect to the server if the connection is lost using a blocking
-	reconnect function.
-	The current state is stored in EEPROM and restored on bootup
+It will reconnect to the server if the connection is lost using a blocking
+reconnect function.
+The current state is stored in EEPROM and restored on bootup
 	
 This program is part of many different sketch examples from many different sources and is primarily just a learning case.
 Nothing fancy with the simple code and Node-RED example that needs to cleaned up, made beter or even shorter.
